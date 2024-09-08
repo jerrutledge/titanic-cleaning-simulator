@@ -1,0 +1,130 @@
+[gd_scene load_steps=14 format=3 uid="uid://dq5wfu8rckyon"]
+
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ad8q1"]
+[ext_resource type="PackedScene" uid="uid://dolbsur6yfrdl" path="res://assets/models/titanic.blend" id="2_owoj7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vp7sx"]
+
+[sub_resource type="Sky" id="Sky_woajd"]
+sky_material = SubResource("ProceduralSkyMaterial_vp7sx")
+
+[sub_resource type="Environment" id="Environment_eujkw"]
+background_mode = 2
+sky = SubResource("Sky_woajd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cnl0l"]
+size = Vector2(800, 800)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p5hg6"]
+size = Vector3(50, 1, 31)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8x1h0"]
+size = Vector3(1, 2, 33.6157)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ata53"]
+size = Vector3(4.338, 2, 5.438)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0apq"]
+size = Vector3(3.215, 2, 4.664)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e51nl"]
+size = Vector3(1.07715, 1, 0.875427)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_gmpdc"]
+radius = 0.989815
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7xf8f"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Character" parent="." instance=ExtResource("1_ad8q1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.764, 16.9387, 0)
+jumping_enabled = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_eujkw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_cnl0l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536759, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.163, 15.9673, 0)
+shape = SubResource("BoxShape3D_p5hg6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.8607, 16.9779, 0)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.223863, 0, -0.974621, 0, 1, 0, 0.974621, 0, -0.223863, 111.945, 16.9779, -11.6781)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.124052, 0, -0.992276, 0, 1, 0, 0.992276, 0, -0.124052, 108.406, 16.9779, -12.6229)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.333198, 0, -0.942857, 0, 1, 0, 0.942857, 0, -0.333198, 123.706, 16.9779, -8.21008)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.476131, 0, -0.879375, 0, 1, 0, 0.879375, 0, -0.476131, 138.595, 16.9779, -1.9414)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.223863, 0, -0.974621, 8.52041e-08, -1, -1.95707e-08, -0.974621, -8.74228e-08, 0.223863, 113.295, 16.9779, 11.2469)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.124052, 0, -0.992276, 8.67475e-08, -1, -1.0845e-08, -0.992276, -8.74228e-08, 0.124052, 109.756, 16.9779, 12.1918)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.333198, 0, -0.942857, 8.24272e-08, -1, -2.91291e-08, -0.942857, -8.74228e-08, 0.333198, 125.057, 16.9779, 7.77895)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-0.476131, 0, -0.879375, 7.68774e-08, -1, -4.16247e-08, -0.879375, -8.74228e-08, 0.476131, 139.945, 16.9779, 1.51026)
+shape = SubResource("BoxShape3D_8x1h0")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 113.799, 16.67, 0.011)
+shape = SubResource("BoxShape3D_ata53")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102, 17.0243, 0.00845337)
+shape = SubResource("BoxShape3D_a0apq")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.476, 17.1658, 1.46677)
+shape = SubResource("BoxShape3D_e51nl")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.144, 17.1658, -5.49794)
+shape = SubResource("CylinderShape3D_gmpdc")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.931, 17.1658, -2.65489)
+shape = SubResource("CylinderShape3D_gmpdc")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.996, 17.1658, 2.6112)
+shape = SubResource("CylinderShape3D_gmpdc")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 132.004, 17.1658, -0.00726163)
+shape = SubResource("CylinderShape3D_7xf8f")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.144, 17.1658, 5.48655)
+shape = SubResource("CylinderShape3D_gmpdc")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.503, 17.1658, -1.43723)
+shape = SubResource("BoxShape3D_e51nl")
+
+[node name="titanic2" parent="." instance=ExtResource("2_owoj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536759, 0)

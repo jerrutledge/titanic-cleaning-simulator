@@ -1,0 +1,90 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dolbsur6yfrdl"
+path="res://.godot/imported/titanic.blend-c00e7a69031a46832d335d2e89bc783a.scn"
+
+[deps]
+
+source_file="res://assets/models/titanic.blend"
+dest_files=["res://.godot/imported/titanic.blend-c00e7a69031a46832d335d2e89bc783a.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:titanic/Model/Group1/3d_man_s01": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/3d_man_s02": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/3d_man_s03": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/3d_man_s04": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/3d_man_s05": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/3d_man_s06": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/3d_man_sta": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/box104/Object_1060": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/box105/Object_1064": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/box106/Object_1067": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/box334/box338/Object_1388": {
+"import/skip_import": true
+},
+"PATH:titanic/Model/Group1/box374/Object_1455": {
+"import/skip_import": true
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true
