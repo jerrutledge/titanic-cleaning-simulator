@@ -1,19 +1,107 @@
-[gd_scene load_steps=14 format=3 uid="uid://dq5wfu8rckyon"]
+[gd_scene load_steps=28 format=3 uid="uid://dq5wfu8rckyon"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_ad8q1"]
+[ext_resource type="Shader" path="res://src/sky.gdshader" id="2_ccal3"]
+[ext_resource type="Shader" path="res://src/water.gdshader" id="2_l1oqo"]
 [ext_resource type="PackedScene" uid="uid://dolbsur6yfrdl" path="res://assets/models/titanic.blend" id="2_owoj7"]
+[ext_resource type="Texture2D" uid="uid://cu08jj7ftuqqc" path="res://assets/textures/Sun.png" id="3_ahdu2"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vp7sx"]
+[sub_resource type="Curve" id="Curve_vkqhe"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.144781, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.779512), 0.0, 0.0, 0, 0]
+point_count = 3
 
-[sub_resource type="Sky" id="Sky_woajd"]
-sky_material = SubResource("ProceduralSkyMaterial_vp7sx")
+[sub_resource type="CurveTexture" id="CurveTexture_dhcha"]
+curve = SubResource("Curve_vkqhe")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hkseo"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n0vyx"]
+seamless = true
+noise = SubResource("FastNoiseLite_hkseo")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4okyr"]
+seamless = true
+noise = SubResource("FastNoiseLite_hkseo")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f5lj1"]
+seamless = true
+noise = SubResource("FastNoiseLite_hkseo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ufpv"]
+shader = ExtResource("2_ccal3")
+shader_parameter/clouds_samples = 24
+shader_parameter/shadow_sample = 4
+shader_parameter/clouds_density = 0.4
+shader_parameter/clouds_scale = 0.8
+shader_parameter/clouds_smoothness = 0.07
+shader_parameter/clouds_light_color = Color(0.961321, 0.744347, 0.794112, 1)
+shader_parameter/clouds_shadow_intensity = 1.1
+shader_parameter/cloud_shape_sampler = SubResource("NoiseTexture2D_4okyr")
+shader_parameter/cloud_noise_sampler = SubResource("NoiseTexture2D_n0vyx")
+shader_parameter/cloud_curves = SubResource("CurveTexture_dhcha")
+shader_parameter/high_clouds_density = 0.2
+shader_parameter/high_clouds_sampler = SubResource("NoiseTexture2D_f5lj1")
+shader_parameter/top_color = Color(0.25, 0.525, 1, 1)
+shader_parameter/bottom_color = Color(1, 0.570667, 0.44, 1)
+shader_parameter/sun_scatter = Color(0.41, 0.41, 0.41, 1)
+shader_parameter/astro_tint = Color(0.945692, 0.932802, 0.761704, 1)
+shader_parameter/astro_scale = 1.1
+shader_parameter/astro_intensity = 2.5
+shader_parameter/astro_sampler = ExtResource("3_ahdu2")
+shader_parameter/stars_intensity = 0.0
+shader_parameter/shooting_stars_intensity = 0.0
+shader_parameter/shooting_star_tint = null
+
+[sub_resource type="Sky" id="Sky_742pl"]
+sky_material = SubResource("ShaderMaterial_4ufpv")
 
 [sub_resource type="Environment" id="Environment_eujkw"]
 background_mode = 2
-sky = SubResource("Sky_woajd")
+sky = SubResource("Sky_742pl")
+ambient_light_source = 3
+ambient_light_color = Color(0.62429, 0.441224, 0.296877, 1)
+reflected_light_source = 2
+glow_enabled = true
+fog_light_energy = 1.45
+fog_density = 0.0001
+volumetric_fog_density = 0.0
+volumetric_fog_albedo = Color(0.960853, 0.738875, 0.54972, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cnl0l"]
 size = Vector2(800, 800)
+subdivide_width = 200
+subdivide_depth = 200
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8t7sd"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_snm07"]
+seamless = true
+as_normal_map = true
+bump_strength = 1.5
+noise = SubResource("FastNoiseLite_8t7sd")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3hqx2"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dtf57"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_3hqx2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pc2ol"]
+render_priority = 0
+shader = ExtResource("2_l1oqo")
+shader_parameter/albedo = Color(0, 0.2175, 0.29, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/wave_direction = Vector2(-1, 0)
+shader_parameter/wave2_direction = Vector2(1, 0)
+shader_parameter/time_scale = 0.025
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_snm07")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_dtf57")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5hg6"]
 size = Vector3(50, 1, 31)
@@ -39,13 +127,16 @@ radius = 0.989815
 
 [node name="Character" parent="." instance=ExtResource("1_ad8q1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.764, 16.9387, 0)
+visible = false
 jumping_enabled = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_eujkw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = SubResource("PlaneMesh_cnl0l")
+surface_material_override/0 = SubResource("ShaderMaterial_pc2ol")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536759, 0)
@@ -128,3 +219,7 @@ shape = SubResource("BoxShape3D_e51nl")
 
 [node name="titanic2" parent="." instance=ExtResource("2_owoj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536759, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.812847, -0.103278, 0.573249, 0.0669079, 0.994196, 0.0842441, -0.578622, -0.0301227, 0.815039, 0, 0, 0)
+shadow_enabled = true
