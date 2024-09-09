@@ -1,4 +1,4 @@
-Game called Titanic cleaning simulator for Brackeys 2024 Game Jam. 
+Game called Titanic cleaning simulator for Brackeys 2024 Game Jam. https://itch.io/jam/brackeys-12
 
 # Credits
 
