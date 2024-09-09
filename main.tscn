@@ -95,6 +95,7 @@ noise = SubResource("FastNoiseLite_3hqx2")
 render_priority = 0
 shader = ExtResource("2_l1oqo")
 shader_parameter/albedo = Color(0, 0.2175, 0.29, 1)
+shader_parameter/fresnel_albedo = Color(0.7, 0.485333, 0.42, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.0
 shader_parameter/wave_direction = Vector2(-1, 0)
