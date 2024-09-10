@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://q2cq26cqwrqb"
+path="res://.godot/imported/broom_head.obj-bc80c7c00681af4ceea47c5f9e710832.mesh"
+
+[deps]
+
+files=["res://.godot/imported/broom_head.obj-bc80c7c00681af4ceea47c5f9e710832.mesh"]
+
+source_file="res://assets/models/broom_head.obj"
+dest_files=["res://.godot/imported/broom_head.obj-bc80c7c00681af4ceea47c5f9e710832.mesh", "res://.godot/imported/broom_head.obj-bc80c7c00681af4ceea47c5f9e710832.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(0.1, 0.1, 0.1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
