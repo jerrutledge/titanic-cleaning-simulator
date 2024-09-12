@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dq5wfu8rckyon"]
+[gd_scene load_steps=63 format=3 uid="uid://dq5wfu8rckyon"]
 
 [ext_resource type="Script" path="res://addons/fpc/character.gd" id="1_c37su"]
 [ext_resource type="Texture2D" uid="uid://dlrws5g3mhupm" path="res://assets/models/broom_Material Base Color.png" id="2_ahixa"]
@@ -11,7 +11,9 @@
 [ext_resource type="Script" path="res://src/soft_body_3d.gd" id="4_6utkd"]
 [ext_resource type="Script" path="res://addons/fpc/debug.gd" id="5_2dyla"]
 [ext_resource type="Script" path="res://addons/fpc/EditorModule.gd" id="6_k1rbn"]
+[ext_resource type="Script" path="res://src/fade.gd" id="7_6a4h2"]
 [ext_resource type="PackedScene" uid="uid://dnova3x5cw1a8" path="res://scenes/stain_area.tscn" id="12_10awu"]
+[ext_resource type="AudioStream" uid="uid://bmratlwetfv8j" path="res://assets/sounds/gentle-ocean-waves-mix-2018-19693.mp3" id="14_gq6uh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -448,6 +450,43 @@ MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 
+[sub_resource type="Animation" id="Animation_betd2"]
+resource_name = "fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_orpwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1lakh"]
+_data = {
+"RESET": SubResource("Animation_orpwo"),
+"fade": SubResource("Animation_betd2")
+}
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_k4wwl"]
 
 [sub_resource type="Curve" id="Curve_vkqhe"]
@@ -677,6 +716,21 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="Character/UserInterface/DebugPanel/MarginContainer"]
 layout_mode = 2
 
+[node name="Fade" type="ColorRect" parent="Character/UserInterface"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("7_6a4h2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Character/UserInterface/Fade"]
+libraries = {
+"": SubResource("AnimationLibrary_1lakh")
+}
+
 [node name="CrouchCeilingDetection" type="ShapeCast3D" parent="Character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("SphereShape3D_k4wwl")
@@ -809,4 +863,10 @@ shadow_enabled = true
 [node name="titanic2" parent="." instance=ExtResource("2_owoj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 0)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_gq6uh")
+autoplay = true
+parameters/looping = true
+
 [connection signal="area_entered" from="Character/Head/BroomHandle/SweepArea3D" to="Character/Head/BroomHandle" method="_on_sweep_area_3d_area_entered"]
+[connection signal="animation_finished" from="Character/UserInterface/Fade/AnimationPlayer" to="Character/UserInterface/Fade" method="_on_animation_player_animation_finished"]
