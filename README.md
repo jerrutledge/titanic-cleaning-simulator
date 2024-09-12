@@ -6,3 +6,5 @@ This work is based on "Titanic" (https://sketchfab.com/3d-models/titanic-b89faa4
 
 Uses Quality First Person Controller v2: https://godotengine.org/asset-library/asset/2418
 https://github.com/ColormaticStudios/quality-godot-first-person-2
+
+<div>Icons made from <a href="https://www.onlinewebfonts.com/icon">svg icons</a>is licensed by CC BY 4.0</div>

@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ci0fv7k0xkm81"]
+
+[ext_resource type="FontFile" uid="uid://u6re2l1t3ouo" path="res://assets/fonts/Italian Old Style MT.ttf" id="1_eqs2i"]
+
+[resource]
+default_font = ExtResource("1_eqs2i")
