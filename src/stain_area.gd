@@ -4,7 +4,7 @@ signal cleaned
 
 @onready var stain_square: MeshInstance3D = $StainSquare
 @export var clean_amount : float = 100.0
-@export var clean_threshhold : float = 10.0
+@export var clean_threshhold : float = 28.0
 
 func _ready() -> void:
 	stain_square.rotation_degrees.y = randf_range(0,360)

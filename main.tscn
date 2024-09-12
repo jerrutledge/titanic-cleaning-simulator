@@ -405,6 +405,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_iidae"]
 resource_name = "wave"
+loop_mode = 1
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -424,7 +425,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-3.04162, -0.25, 0, 0.25, 0, -3.04211, -0.25, 0, 0.25, 0, -3.04162, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-3.04162, -0.25, 0, 0.25, 0, -3.342, -0.25, 0, 0.25, 0, -3.04162, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 tracks/2/type = "bezier"
@@ -435,7 +436,7 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-2.8091, -0.25, 0, 0.25, 0, -3.14159, -0.25, 0, 0.25, 0, -2.8091, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-2.8091, -0.25, 0, 0.25, 0, -2.859, -0.25, 0, 0.25, 0, -2.8091, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1)
 }
 
@@ -732,7 +733,7 @@ libraries = {
 speed_scale = 4.0
 
 [node name="BroomHandle" type="MeshInstance3D" parent="Character/Head"]
-transform = Transform3D(0.926599, -0.365061, -0.0902461, -0.295136, -0.854692, 0.427079, -0.233043, -0.369096, -0.899699, 0.535034, 0.406467, -0.77451)
+transform = Transform3D(0.926599, -0.365061, -0.0902461, -0.295136, -0.854692, 0.427079, -0.233043, -0.369096, -0.899699, 0.535034, 0.406467, -0.774506)
 mesh = SubResource("CylinderMesh_uf62k")
 skeleton = NodePath("../..")
 script = ExtResource("2_nfkvl")

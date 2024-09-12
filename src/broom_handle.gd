@@ -12,8 +12,13 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed('wave'):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		wave_animation.play('wave')
-	for area in cleanees:
-		area.call('clean', delta * cleaning_rate)
+		mop.play()
+	elif Input.is_action_just_released('wave'):
+		wave_animation.stop()
+		mop.stop()
+	if Input.is_action_pressed('wave'):
+		for area in cleanees:
+			area.call('clean', delta * cleaning_rate)
 
 func _on_sweep_area_3d_area_entered(area: Area3D) -> void:
 	area.connect('cleaned', glassbell.play)
