@@ -6,6 +6,7 @@ signal cleaned
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed('wave'):
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		wave_animation.play('wave')
 
 

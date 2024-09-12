@@ -772,39 +772,41 @@ shape = SubResource("CylinderShape3D_gmpdc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.503, 17.1658, -1.43723)
 shape = SubResource("BoxShape3D_e51nl")
 
-[node name="titanic2" parent="." instance=ExtResource("2_owoj7")]
+[node name="Stains" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536759, 0)
 
-[node name="Stains" type="Node3D" parent="titanic2"]
+[node name="StainArea" parent="Stains" instance=ExtResource("12_10awu")]
 
-[node name="StainArea" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
-
-[node name="StainArea2" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea2" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.029, 16.4828, -5.57713)
 
-[node name="StainArea3" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea3" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.558, 16.4828, -6.30185)
 
-[node name="StainArea4" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea4" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.537, 16.4828, -5.02662)
 
-[node name="StainArea5" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea5" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.603, 16.4828, -1.52116)
 
-[node name="StainArea6" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea6" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120.838, 16.4828, -6.94922)
 
-[node name="StainArea7" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea7" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.791, 16.4828, -0.220127)
 
-[node name="StainArea8" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea8" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.214, 16.4828, 5.35313)
 
-[node name="StainArea9" parent="titanic2/Stains" instance=ExtResource("12_10awu")]
+[node name="StainArea9" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.552, 16.4828, 2.34968)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.812847, -0.103278, 0.573249, 0.0669079, 0.994196, 0.0842441, -0.578622, -0.0301227, 0.815039, 0, 0, 0)
+light_energy = 0.733
 shadow_enabled = true
+
+[node name="titanic2" parent="." instance=ExtResource("2_owoj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 0)
 
 [connection signal="area_entered" from="Character/Head/BroomHandle/SweepArea3D" to="Character/Head/BroomHandle" method="_on_sweep_area_3d_area_entered"]
