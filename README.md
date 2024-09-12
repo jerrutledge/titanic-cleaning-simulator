@@ -7,4 +7,7 @@ This work is based on "Titanic" (https://sketchfab.com/3d-models/titanic-b89faa4
 Uses Quality First Person Controller v2: https://godotengine.org/asset-library/asset/2418
 https://github.com/ColormaticStudios/quality-godot-first-person-2
 
-<div>Icons made from <a href="https://www.onlinewebfonts.com/icon">svg icons</a>is licensed by CC BY 4.0</div>
+Icons made from https://www.onlinewebfonts.com/icon licensed by CC BY 4.0
+
+Mopping_the_floor.wav by Juan_Matthys_OW -- https://freesound.org/s/655723/ -- License: Attribution 4.0
+Echoing Glass Bell Ringing by f-r-a-g-i-l-e -- https://freesound.org/s/447146/ -- License: Attribution 4.0
