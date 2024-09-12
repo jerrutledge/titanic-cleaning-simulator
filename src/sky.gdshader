@@ -167,7 +167,7 @@ void sky() {
 	vec2 clouds = EYEDIR.y > 0.0 ? cloud_ray_march(clouds_direction, LIGHT0_DIRECTION) : vec2(0.0);
 
 	vec3 stuffs = mix(bottom_color, clouds_light_color, exp(-clouds.y * clouds_shadow_intensity));
-	
+
 	float alphas = (1.0 - exp(-clouds.x * horizon_mask * bottom_mask * 10.0));
 	COLOR.rgb = mix(sky_color, stuffs, alphas);
 	ALPHA = alphas;
