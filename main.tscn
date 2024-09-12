@@ -780,6 +780,7 @@ stream = ExtResource("8_3p3uw")
 bus = &"Reward"
 
 [node name="UserInterface" type="Control" parent="Character"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -994,4 +995,5 @@ bus = &"Music"
 parameters/looping = true
 
 [connection signal="area_entered" from="Character/Head/BroomHandle/SweepArea3D" to="Character/Head/BroomHandle" method="_on_sweep_area_3d_area_entered"]
+[connection signal="area_exited" from="Character/Head/BroomHandle/SweepArea3D" to="Character/Head/BroomHandle" method="_on_sweep_area_3d_area_exited"]
 [connection signal="animation_finished" from="Character/UserInterface/Fade/AnimationPlayer" to="Character/UserInterface/Fade" method="_on_animation_player_animation_finished"]
