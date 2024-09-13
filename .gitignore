@@ -14,6 +14,7 @@ mono_crash.*.json
 
 .vscode/
 export/
+build/
 
 assets/models/titanic.blend
 assets/models/titanic.blend1
