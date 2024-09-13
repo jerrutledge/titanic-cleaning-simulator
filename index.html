@@ -84,11 +84,6 @@ html, body, #canvas {
 
 	</head>
 	<body>
-		<h1>Titanic Cleaning Simulator</h1>
-		<div class="center"><img src="titanic.png" alt="Picture of titanic"></div>
-		<p>Left Mouse Button to clean</p>
-		<p>WASD keys to move</p>
-		<p>Press escape to free your cursor</p>
 		<canvas id="canvas">
 			Error: Your browser does not support the canvas tag.
 		</canvas>
@@ -98,7 +93,11 @@ html, body, #canvas {
 		</noscript>
 
 		<div id="status">
-			<img id="status-splash" src="$GODOT_SPLASH" alt="">
+			<h1>Titanic Cleaning Simulator</h1>
+			<img id="status-splash" src="titanic.png" alt="">
+			<p>Left Mouse Button to clean</p>
+			<p>WASD keys to move</p>
+			<p>Press escape to free your cursor</p>
 			<progress id="status-progress"></progress>
 			<div id="status-notice"></div>
 		</div>
