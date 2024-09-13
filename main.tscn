@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dq5wfu8rckyon"]
+[gd_scene load_steps=69 format=3 uid="uid://dq5wfu8rckyon"]
 
 [ext_resource type="Script" path="res://addons/fpc/character.gd" id="1_c37su"]
 [ext_resource type="Texture2D" uid="uid://dlrws5g3mhupm" path="res://assets/models/broom_Material Base Color.png" id="2_ahixa"]
@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://q2cq26cqwrqb" path="res://assets/models/broom_head.obj" id="3_pujru"]
 [ext_resource type="Script" path="res://src/soft_body_3d.gd" id="4_6utkd"]
 [ext_resource type="Script" path="res://addons/fpc/debug.gd" id="5_2dyla"]
+[ext_resource type="Texture2D" uid="uid://ddlwaonw4k18q" path="res://assets/textures/Titanic_Clean.png" id="5_n6284"]
 [ext_resource type="Script" path="res://addons/fpc/EditorModule.gd" id="6_k1rbn"]
 [ext_resource type="AudioStream" uid="uid://dtvpcrx8a7h3y" path="res://assets/sounds/mop.wav" id="6_plutr"]
 [ext_resource type="Theme" uid="uid://ci0fv7k0xkm81" path="res://src/theme.tres" id="6_wh6xt"]
@@ -18,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://cbugxcsh6t7q6" path="res://assets/sounds/bellcelebration.wav" id="8_3p3uw"]
 [ext_resource type="PackedScene" uid="uid://dnova3x5cw1a8" path="res://scenes/stain_area.tscn" id="12_10awu"]
 [ext_resource type="AudioStream" uid="uid://bmratlwetfv8j" path="res://assets/sounds/gentle-ocean-waves-mix-2018-19693.mp3" id="14_gq6uh"]
+[ext_resource type="Script" path="res://src/stains.gd" id="16_1s1p6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -776,12 +778,7 @@ bus = &"Mopping"
 stream = ExtResource("7_g7l0a")
 bus = &"Reward"
 
-[node name="Bellcelebration" type="AudioStreamPlayer" parent="Character/Head/BroomHandle"]
-stream = ExtResource("8_3p3uw")
-bus = &"Reward"
-
 [node name="UserInterface" type="Control" parent="Character"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -790,6 +787,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 theme = ExtResource("6_wh6xt")
+
+[node name="ScoreContainer" type="PanelContainer" parent="Character/UserInterface"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -60.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 60.0
+grow_horizontal = 0
+
+[node name="ScoreLabel" type="Label" parent="Character/UserInterface/ScoreContainer"]
+layout_mode = 2
+text = "0 / 20"
 
 [node name="DebugPanel" type="PanelContainer" parent="Character/UserInterface"]
 visible = false
@@ -856,6 +868,18 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 42
 text = "Before the end of my shift?"
 horizontal_alignment = 1
+
+[node name="CelebrationScreen" type="TextureRect" parent="Character/UserInterface"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_n6284")
+expand_mode = 2
+stretch_mode = 5
 
 [node name="CrouchCeilingDetection" type="ShapeCast3D" parent="Character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -954,6 +978,7 @@ shape = SubResource("BoxShape3D_e51nl")
 
 [node name="Stains" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536759, 0)
+script = ExtResource("16_1s1p6")
 
 [node name="StainArea" parent="Stains" instance=ExtResource("12_10awu")]
 
@@ -981,6 +1006,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.214, 16.4828, 5.35313)
 [node name="StainArea9" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.552, 16.4828, 2.34968)
 
+[node name="StainArea10" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.462, 16.4828, 9.84633)
+
+[node name="StainArea11" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.801, 16.4828, 10.913)
+
+[node name="StainArea12" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.734, 16.4828, 7.83115)
+
+[node name="StainArea13" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.165, 16.4828, 4.1429)
+
+[node name="StainArea14" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.211, 16.4828, 10.727)
+
+[node name="StainArea15" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.026, 16.4828, -7.26185)
+
+[node name="StainArea16" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.973, 16.4828, -5.62196)
+
+[node name="StainArea17" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.603, 16.4828, -10.584)
+
+[node name="StainArea18" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 117.084, 16.4828, -0.238631)
+
+[node name="StainArea19" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.14, 16.4828, -3.74432)
+
+[node name="StainArea20" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.064, 16.4828, -3.38972)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.812847, -0.103278, 0.573249, 0.0669079, 0.994196, 0.0842441, -0.578622, -0.0301227, 0.815039, 0, 0, 0)
 light_energy = 0.733
@@ -988,6 +1046,10 @@ shadow_enabled = true
 
 [node name="titanic2" parent="." instance=ExtResource("2_owoj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 0)
+
+[node name="Bellcelebration" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3p3uw")
+bus = &"Reward"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_gq6uh")
