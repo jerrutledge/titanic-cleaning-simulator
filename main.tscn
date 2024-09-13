@@ -976,6 +976,10 @@ shape = SubResource("CylinderShape3D_gmpdc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.503, 17.1658, -1.43723)
 shape = SubResource("BoxShape3D_e51nl")
 
+[node name="Bellcelebration" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3p3uw")
+bus = &"Reward"
+
 [node name="Stains" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.536759, 0)
 script = ExtResource("16_1s1p6")
@@ -1046,10 +1050,6 @@ shadow_enabled = true
 
 [node name="titanic2" parent="." instance=ExtResource("2_owoj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.55, 0)
-
-[node name="Bellcelebration" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_3p3uw")
-bus = &"Reward"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_gq6uh")
