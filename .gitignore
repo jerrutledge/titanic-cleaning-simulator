@@ -12,7 +12,6 @@
 data_*/
 mono_crash.*.json
 
-.vscode/
 export/
 build/
 
