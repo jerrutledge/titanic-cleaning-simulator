@@ -15,5 +15,4 @@ mono_crash.*.json
 export/
 build/
 
-assets/models/titanic.blend
 assets/models/titanic.blend1
