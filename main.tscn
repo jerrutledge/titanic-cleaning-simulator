@@ -1010,6 +1010,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.214, 16.4828, 5.35313)
 [node name="StainArea9" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129.552, 16.4828, 2.34968)
 
+[node name="StainArea21" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.517, 16.4828, 4.10209)
+
+[node name="StainArea22" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 131.562, 16.4828, 1.2818)
+
+[node name="StainArea23" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.541, 16.4828, -3.56)
+
 [node name="StainArea10" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.462, 16.4828, 9.84633)
 
@@ -1018,6 +1027,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.801, 16.4828, 10.913)
 
 [node name="StainArea12" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.734, 16.4828, 7.83115)
+
+[node name="StainArea24" parent="Stains" instance=ExtResource("12_10awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112.746, 16.4828, 6.40373)
 
 [node name="StainArea13" parent="Stains" instance=ExtResource("12_10awu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 102.165, 16.4828, 4.1429)
